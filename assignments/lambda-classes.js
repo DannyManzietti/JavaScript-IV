@@ -27,20 +27,6 @@ class Instructor extends Person {
         }
         
     }
-    adjustGrade(student, increaseGrade) {
-        if (increaseGrade) {
-            student.grade += Math.round(Math.random() * 5)+ 1;
-            if (student.grade >= 100) {
-                return `${student.name}'s grade has been increased to ${student.grade}` + student.graduate();
-            } else {
-                return `${student.name}'s grade has been increased to ${student.grade}`;
-            }
-        } else {
-            student.grade -= Math.round(Math.random() * 5) + 1;
-            return `${student.name}'s grade has been decreased to ${student.grade}`;
-        }
-        
-    }
 }
 
 class Student extends Person {
@@ -101,6 +87,19 @@ const danny = new Instructor({
     favSubjects: ['barking', 'rolling in mud', 'chasing rabbits'],
     grade: 80
   });
+
+
+
+  const joe = new Student({
+    name: 'Joe',
+    location: `Marcellus`,
+    age: 95,
+    previousbackground: 'acountant',
+    className: '101',
+    favSubjects: ['poetry', 'math', 'shop'],
+    grade: 55
+  });
+  
   
   
   
@@ -121,6 +120,7 @@ const danny = new Instructor({
 
   console.log(danny.speak());
   console.log(ernie.speak());
+  console.log(joe.speak());
 
 
   console.log(ernie.demo('BootStrap'));
@@ -131,3 +131,6 @@ const danny = new Instructor({
 
   console.log(ernie.standUp('CS_12'));
   console.log(ernie.debugsCode(king, 'JavaScript'));
+
+
+  console.log(joe.graduate());
